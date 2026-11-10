@@ -188,3 +188,4 @@ body{background:var(--k-bg);font-family:var(--k-sans);color:#000}
   --font-heading--weight:700;
 }
 .button:not(.button-secondary):not(.button-unstyled),button.button,.shopify-payment-button__button--unbranded{background-color:var(--k-green)!important;border-color:var(--k-green)!important;color:#fff!important}
+

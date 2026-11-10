@@ -225,7 +225,7 @@
           "type": "row",
           "settings": {
             "asset": "koreous-bars-closeup.jpg",
-            "image_right": false,
+            "image_right": true,
             "align": "center",
             "eyebrow": "",
             "heading": "The Koreous difference",
@@ -240,11 +240,74 @@
             "button_label": "Shop the ritual",
             "button_link": "/collections/all"
           }
+        },
+        "s3": {
+          "type": "row",
+          "settings": {
+            "asset": "koreous-ingredients.jpg",
+            "image_right": true,
+            "align": "left",
+            "eyebrow": "Rooted in K-beauty",
+            "heading": "Ingredients with history",
+            "text": "Korean beauty has relied on these botanicals for generations. We bring them together in one solid bar for your scalp.",
+            "note": "",
+            "button_label": "",
+            "button_link": "",
+            "icon_1": "leaf",
+            "point_1": "Ginseng root and green tea",
+            "icon_2": "drop",
+            "point_2": "Fermented rice water and camellia",
+            "icon_3": "spark",
+            "point_3": "Rosemary and mineral-rich green clay"
+          }
+        },
+        "s4": {
+          "type": "row",
+          "settings": {
+            "asset": "koreous-howto.jpg",
+            "image_right": false,
+            "align": "left",
+            "eyebrow": "The 60-second ritual",
+            "heading": "How to use",
+            "text": "Three simple steps, every wash. Your scalp will feel the difference from day one.",
+            "note": "",
+            "button_label": "",
+            "button_link": "",
+            "icon_1": "n1",
+            "point_1": "Wet your hair and glide the bar over your scalp",
+            "icon_2": "n2",
+            "point_2": "Massage the lather in for 60 seconds, then rinse",
+            "icon_3": "n3",
+            "point_3": "Follow with the conditioner bar on your lengths"
+          }
+        },
+        "s5": {
+          "type": "row",
+          "settings": {
+            "asset": "koreous-every-type.jpg",
+            "image_right": false,
+            "align": "center",
+            "eyebrow": "",
+            "heading": "Made for every hair type",
+            "text": "Coily, curly, wavy or straight. Men and women. One clean ritual built around the scalp, so it works for everyone.",
+            "note": "",
+            "button_label": "Find your ritual",
+            "button_link": "/collections/all",
+            "icon_1": "leaf",
+            "point_1": "",
+            "icon_2": "leaf",
+            "point_2": "",
+            "icon_3": "leaf",
+            "point_3": ""
+          }
         }
       },
       "block_order": [
         "s1",
-        "s2"
+        "s3",
+        "s4",
+        "s2",
+        "s5"
       ],
       "settings": {}
     }
@@ -260,4 +323,3 @@
     "trust"
   ]
 }
-

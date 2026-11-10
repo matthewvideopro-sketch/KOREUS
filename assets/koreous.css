@@ -54,7 +54,7 @@ body{background:var(--k-bg);font-family:var(--k-sans);color:#000}
 
 /* hero */
 .k-hero{position:relative;min-height:680px;display:flex;align-items:center;overflow:hidden}
-.k-hero picture,.k-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 35%}
+.k-hero picture,.k-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 15%}
 .k-hero__content{position:relative;z-index:2;width:100%}
 .k-hero__box{max-width:470px}
 .k-hero__badge{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--k-ink);margin-bottom:12px}

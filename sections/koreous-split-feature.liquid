@@ -1,0 +1,70 @@
+<section class="k-split">
+  {%- for block in section.blocks -%}
+  <div class="k-split__row{% if block.settings.image_right %} k-split__row--flip{% endif %}" {{ block.shopify_attributes }}>
+    <div class="k-split__media">
+      {%- if block.settings.image != blank -%}
+        <img src="{{ block.settings.image | image_url: width: 1800 }}" alt="{{ block.settings.heading | strip_html | escape }}" loading="lazy" width="1800" height="1013">
+      {%- else -%}
+        <img src="{{ block.settings.asset | asset_url }}" alt="{{ block.settings.heading | strip_html | escape }}" loading="lazy" width="1800" height="1013">
+      {%- endif -%}
+    </div>
+    <div class="k-split__panel k-split__panel--{{ block.settings.align }}">
+      <div class="k-split__inner">
+        {%- if block.settings.eyebrow != blank -%}<div class="k-split__eyebrow">{{ block.settings.eyebrow }}</div>{%- endif -%}
+        <h2 class="k-split__h">{{ block.settings.heading }}</h2>
+        {%- if block.settings.text != blank -%}<p class="k-split__p">{{ block.settings.text }}</p>{%- endif -%}
+        {%- assign has_points = false -%}
+        {%- for i in (1..3) -%}{%- capture k -%}point_{{ i }}{%- endcapture -%}{%- if block.settings[k] != blank -%}{%- assign has_points = true -%}{%- endif -%}{%- endfor -%}
+        {%- if has_points -%}
+        <ul class="k-split__list">
+          {%- for i in (1..3) -%}
+            {%- capture k -%}point_{{ i }}{%- endcapture -%}
+            {%- capture ic -%}icon_{{ i }}{%- endcapture -%}
+            {%- if block.settings[k] != blank -%}
+            <li><span class="k-split__ic">{% render 'koreous-icon', icon: block.settings[ic] %}</span><span>{{ block.settings[k] }}</span></li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+        {%- endif -%}
+        {%- if block.settings.note != blank -%}<div class="k-split__note">{{ block.settings.note }}</div>{%- endif -%}
+        {%- if block.settings.button_label != blank -%}
+          <a class="k-split__btn" href="{{ block.settings.button_link | default: '/collections/all' }}">{{ block.settings.button_label }}</a>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+  {%- endfor -%}
+</section>
+
+{% schema %}
+{
+  "name": "KOREOUS split feature",
+  "blocks": [{
+    "type": "row",
+    "name": "Image + panel row",
+    "settings": [
+      { "type": "image_picker", "id": "image", "label": "Image (optional)" },
+      { "type": "text", "id": "asset", "label": "Built-in image file", "default": "koreous-lineup.jpg" },
+      { "type": "checkbox", "id": "image_right", "label": "Image on the right", "default": false },
+      { "type": "select", "id": "align", "label": "Text alignment", "default": "left", "options": [
+        { "value": "left", "label": "Left" }, { "value": "center", "label": "Center" } ] },
+      { "type": "text", "id": "eyebrow", "label": "Eyebrow" },
+      { "type": "text", "id": "heading", "label": "Heading" },
+      { "type": "textarea", "id": "text", "label": "Text" },
+      { "type": "select", "id": "icon_1", "label": "Icon 1", "default": "leaf", "options": [
+        { "value": "leaf", "label": "Leaf" }, { "value": "drop", "label": "Drop" }, { "value": "spark", "label": "Sparkle" }, { "value": "shield", "label": "Shield" } ] },
+      { "type": "text", "id": "point_1", "label": "Point 1" },
+      { "type": "select", "id": "icon_2", "label": "Icon 2", "default": "drop", "options": [
+        { "value": "leaf", "label": "Leaf" }, { "value": "drop", "label": "Drop" }, { "value": "spark", "label": "Sparkle" }, { "value": "shield", "label": "Shield" } ] },
+      { "type": "text", "id": "point_2", "label": "Point 2" },
+      { "type": "select", "id": "icon_3", "label": "Icon 3", "default": "spark", "options": [
+        { "value": "leaf", "label": "Leaf" }, { "value": "drop", "label": "Drop" }, { "value": "spark", "label": "Sparkle" }, { "value": "shield", "label": "Shield" } ] },
+      { "type": "text", "id": "point_3", "label": "Point 3" },
+      { "type": "text", "id": "note", "label": "Small note" },
+      { "type": "text", "id": "button_label", "label": "Button label" },
+      { "type": "url", "id": "button_link", "label": "Button link" }
+    ]
+  }],
+  "presets": [{ "name": "KOREOUS split feature" }]
+}
+{% endschema %}

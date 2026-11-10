@@ -197,12 +197,63 @@
         "t3"
       ],
       "settings": {}
+    },
+    "split": {
+      "type": "koreous-split-feature",
+      "blocks": {
+        "s1": {
+          "type": "row",
+          "settings": {
+            "asset": "koreous-lineup.jpg",
+            "image_right": false,
+            "align": "left",
+            "eyebrow": "Korean natural",
+            "heading": "Scalp care rituals",
+            "text": "Our goal is simple: help you build a healthier scalp routine with clean, plant-powered Korean formulas that work for every hair type.",
+            "icon_1": "leaf",
+            "point_1": "Made with plant-based, Korean-inspired botanicals",
+            "icon_2": "drop",
+            "point_2": "Sulfate-free formulas that cleanse without stripping",
+            "icon_3": "spark",
+            "point_3": "Gentle enough for everyday use — men and women",
+            "note": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "s2": {
+          "type": "row",
+          "settings": {
+            "asset": "koreous-bars-closeup.jpg",
+            "image_right": false,
+            "align": "center",
+            "eyebrow": "",
+            "heading": "The Koreous difference",
+            "text": "We make solid scalp-care bars the Korean way — slow-crafted in small batches with fermented botanicals, and nothing your scalp doesn't need.",
+            "point_1": "",
+            "point_2": "",
+            "point_3": "",
+            "icon_1": "leaf",
+            "icon_2": "drop",
+            "icon_3": "spark",
+            "note": "",
+            "button_label": "Shop the ritual",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "s1",
+        "s2"
+      ],
+      "settings": {}
     }
   },
   "order": [
     "hero",
     "best",
     "approach",
+    "split",
     "ritual",
     "reviews",
     "faq",

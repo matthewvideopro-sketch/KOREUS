@@ -189,3 +189,29 @@ body{background:var(--k-bg);font-family:var(--k-sans);color:#000}
 }
 .button:not(.button-secondary):not(.button-unstyled),button.button,.shopify-payment-button__button--unbranded{background-color:var(--k-green)!important;border-color:var(--k-green)!important;color:#fff!important}
 
+/* split feature (image + dark green panel) */
+.k-split{background:#24402C}
+.k-split__row{display:grid;grid-template-columns:1fr 1fr;min-height:480px}
+.k-split__row--flip .k-split__media{order:2}
+.k-split__media{position:relative;overflow:hidden;min-height:340px}
+.k-split__media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.k-split__panel{background:#24402C;color:#fff;display:flex;align-items:center;padding:56px 7%}
+.k-split__panel--center{justify-content:center;text-align:center}
+.k-split__inner{max-width:470px}
+.k-split__eyebrow{font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;opacity:.9;margin-bottom:8px}
+.k-split__h{font-family:var(--k-sans);font-weight:800;text-transform:uppercase;font-size:46px;line-height:.98;letter-spacing:.5px;margin:0 0 16px;color:#fff}
+.k-split__p{font-size:15px;line-height:1.55;margin:0 0 24px;opacity:.95}
+.k-split__list{list-style:none;padding:0;margin:0 0 18px;display:flex;flex-direction:column;gap:18px}
+.k-split__list li{display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.45}
+.k-split__ic{flex:0 0 34px;width:34px;height:34px;border-radius:50%;background:#fff;color:#24402C;display:inline-flex;align-items:center;justify-content:center}
+.k-split__ic svg{width:18px;height:18px}
+.k-split__note{font-size:11px;font-style:italic;opacity:.8}
+.k-split__btn{display:inline-block;margin-top:22px;background:#fff;color:#24402C;font-weight:700;font-size:13px;letter-spacing:.8px;text-transform:uppercase;padding:14px 28px;border-radius:8px;text-decoration:none}
+.k-split__btn:hover{opacity:.9;color:#24402C}
+@media (max-width:900px){
+  .k-split__row{grid-template-columns:1fr;min-height:0}
+  .k-split__row--flip .k-split__media{order:0}
+  .k-split__media{aspect-ratio:16/10;min-height:0}
+  .k-split__panel{padding:40px 24px}
+  .k-split__h{font-size:34px}
+}

@@ -1,0 +1,26 @@
+<section style="padding:10px 0 40px">
+  <div class="k-wrap k-trust">
+    {%- for block in section.blocks -%}
+    <div class="k-trust__item" {{ block.shopify_attributes }}>
+      {% render 'koreous-icon', icon: block.settings.icon %}
+      <div><h4>{{ block.settings.title }}</h4><p>{{ block.settings.text }}</p></div>
+    </div>
+    {%- endfor -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KOREOUS trust icons",
+  "blocks": [{
+    "type": "item", "name": "Item",
+    "settings": [
+      { "type": "select", "id": "icon", "label": "Icon", "default": "truck", "options": [
+        { "value": "truck", "label": "Truck" }, { "value": "badge", "label": "Badge" }, { "value": "support", "label": "Support" } ] },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "text", "id": "text", "label": "Text" }
+    ]
+  }],
+  "presets": [{ "name": "KOREOUS trust icons" }]
+}
+{% endschema %}

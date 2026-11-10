@@ -1,0 +1,40 @@
+<div class="k-ann" data-k-countdown="{{ section.settings.end_date }}">
+  <div class="k-ann__txt">
+    <b>{{ section.settings.title_1 }} <em>{{ section.settings.title_highlight }}</em> {{ section.settings.title_2 }}</b>
+    <small>{{ section.settings.subtitle }}</small>
+  </div>
+  {%- if section.settings.end_date != blank -%}
+  <div class="k-cd" aria-label="Sale countdown">
+    <div class="k-cd__u"><span class="k-cd__n" data-d>00</span><span class="k-cd__l">Days</span></div><span class="k-cd__sep">:</span>
+    <div class="k-cd__u"><span class="k-cd__n" data-h>00</span><span class="k-cd__l">Hrs</span></div><span class="k-cd__sep">:</span>
+    <div class="k-cd__u"><span class="k-cd__n" data-m>00</span><span class="k-cd__l">Min</span></div><span class="k-cd__sep">:</span>
+    <div class="k-cd__u"><span class="k-cd__n" data-s>00</span><span class="k-cd__l">Sec</span></div>
+  </div>
+  {%- endif -%}
+</div>
+<script>
+(function(){
+  var el=document.querySelector('[data-k-countdown]'); if(!el) return;
+  var end=new Date(el.getAttribute('data-k-countdown')).getTime(); if(isNaN(end)) return;
+  var p=function(n){return String(n).padStart(2,'0')};
+  function tick(){var t=Math.max(0,end-Date.now()),s=Math.floor(t/1000);
+    el.querySelector('[data-d]').textContent=p(Math.floor(s/86400));
+    el.querySelector('[data-h]').textContent=p(Math.floor(s%86400/3600));
+    el.querySelector('[data-m]').textContent=p(Math.floor(s%3600/60));
+    el.querySelector('[data-s]').textContent=p(s%60);}
+  tick(); setInterval(tick,1000);
+})();
+</script>
+
+{% schema %}
+{
+  "name": "KOREOUS sale bar",
+  "settings": [
+    { "type": "text", "id": "title_1", "label": "Title start", "default": "PRE" },
+    { "type": "text", "id": "title_highlight", "label": "Title highlight (green)", "default": "BLACK FRIDAY" },
+    { "type": "text", "id": "title_2", "label": "Title end", "default": "SALE" },
+    { "type": "text", "id": "subtitle", "label": "Subtitle", "default": "60% OFF + FREE MYSTERY GIFT" },
+    { "type": "text", "id": "end_date", "label": "Countdown end (YYYY-MM-DDTHH:MM:SS)", "default": "2026-11-28T00:00:00", "info": "Leave blank to hide the timer" }
+  ]
+}
+{% endschema %}

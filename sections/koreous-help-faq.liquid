@@ -1,0 +1,37 @@
+<section class="k-section" style="padding-top:20px">
+  <div class="k-wrap k-helpfaq">
+    <div class="k-help">
+      <h3>{{ section.settings.help_heading }}</h3>
+      <a class="k-btn" href="{{ section.settings.help_link | default: '/pages/contact' }}">{{ section.settings.help_button }}</a>
+    </div>
+    <div class="k-faq">
+      <h2>{{ section.settings.heading }}</h2>
+      {%- for block in section.blocks -%}
+      <details {{ block.shopify_attributes }}>
+        <summary>{{ block.settings.question }} {% render 'koreous-icon', icon: 'chevron' %}</summary>
+        <div class="k-faq__a">{{ block.settings.answer }}</div>
+      </details>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KOREOUS help + FAQ",
+  "settings": [
+    { "type": "text", "id": "help_heading", "label": "Help heading", "default": "Need help?" },
+    { "type": "text", "id": "help_button", "label": "Help button", "default": "Contact our support team" },
+    { "type": "url", "id": "help_link", "label": "Help link" },
+    { "type": "text", "id": "heading", "label": "FAQ heading", "default": "Frequently Asked Questions" }
+  ],
+  "blocks": [{
+    "type": "faq", "name": "Question",
+    "settings": [
+      { "type": "text", "id": "question", "label": "Question" },
+      { "type": "richtext", "id": "answer", "label": "Answer" }
+    ]
+  }],
+  "presets": [{ "name": "KOREOUS help + FAQ" }]
+}
+{% endschema %}

@@ -1,0 +1,57 @@
+{%- assign menu = linklists[section.settings.menu] -%}
+<header class="k-header">
+  <div class="k-wrap k-header__in">
+    <div style="display:flex;align-items:center">
+      <button class="k-burger k-actions" type="button" aria-label="Open menu" onclick="document.getElementById('k-drawer').classList.add('is-open')" style="background:none;border:0;cursor:pointer;padding:0">
+        <span style="width:24px;height:24px;display:inline-flex">{% render 'koreous-icon', icon: 'menu' %}</span>
+      </button>
+      <nav class="k-nav" aria-label="Main">
+        {%- if menu.links.size > 0 -%}
+          {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+        {%- else -%}
+          <a href="/">Home</a><a href="/collections/all">Shop All</a><a href="/pages/contact">Contact</a><a href="/account">Manage Subscription</a>
+        {%- endif -%}
+      </nav>
+    </div>
+    <a class="k-logo" href="/" aria-label="{{ shop.name }}">
+      <img src="{{ 'koreous-logo.png' | asset_url }}" alt="Koreous" width="900" height="347">
+    </a>
+    <div class="k-actions">
+      {%- if localization.available_countries.size > 1 -%}
+      <div class="k-cur">
+        {%- form 'localization', id: 'k-loc' -%}
+          <select name="country_code" aria-label="Currency" onchange="this.form.submit()">
+            {%- for country in localization.available_countries -%}
+              <option value="{{ country.iso_code }}" {% if country.iso_code == localization.country.iso_code %}selected{% endif %}>{{ country.currency.iso_code }} {{ country.currency.symbol }}</option>
+            {%- endfor -%}
+          </select>
+        {%- endform -%}
+      </div>
+      {%- else -%}
+      <span class="k-cur">{{ cart.currency.iso_code }}</span>
+      {%- endif -%}
+      <a href="{{ routes.account_url }}" aria-label="Account">{% render 'koreous-icon', icon: 'account' %}</a>
+      <a href="{{ routes.cart_url }}" aria-label="Cart">{% render 'koreous-icon', icon: 'cart' %}<span class="k-cart-count">{{ cart.item_count }}</span></a>
+    </div>
+  </div>
+</header>
+<div class="k-drawer" id="k-drawer" onclick="if(event.target===this)this.classList.remove('is-open')">
+  <div class="k-drawer__panel">
+    <button class="k-drawer__close" type="button" aria-label="Close" onclick="document.getElementById('k-drawer').classList.remove('is-open')">&times;</button>
+    {%- if menu.links.size > 0 -%}
+      {%- for link in menu.links -%}<a href="{{ link.url }}">{{ link.title }}</a>{%- endfor -%}
+    {%- else -%}
+      <a href="/">Home</a><a href="/collections/all">Shop All</a><a href="/pages/contact">Contact</a><a href="/account">Manage Subscription</a>
+    {%- endif -%}
+    <a href="{{ routes.account_url }}">Account</a>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "KOREOUS header",
+  "settings": [
+    { "type": "link_list", "id": "menu", "label": "Menu", "default": "main-menu" }
+  ]
+}
+{% endschema %}

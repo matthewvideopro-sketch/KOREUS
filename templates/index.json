@@ -1,285 +1,211 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin theme editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */{
+{
   "sections": {
-    "hero_jVaWmY": {
-      "type": "hero",
+    "hero": {
+      "type": "koreous-hero",
+      "settings": {
+        "show_stars": true,
+        "badge": "Rooted in Korean scalp care",
+        "heading_1": "Calm scalp. Fuller-looking hair.",
+        "heading_2": "Made the Korean way.",
+        "text": "Clean, plant-powered Korean formulas that reset your scalp so your hair can look thicker, stronger and healthier with every wash.",
+        "button_label": "Shop the Koreous Bar",
+        "button_link": "/collections/all"
+      }
+    },
+    "best": {
+      "type": "koreous-bestsellers",
+      "settings": {
+        "heading": "Bestsellers"
+      },
       "blocks": {
-        "text_YLPk4p": {
-          "type": "text",
-          "name": "t:names.heading",
+        "b1": {
+          "type": "product",
           "settings": {
-            "text": "<p>Browse our latest products</p>",
-            "text_color": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h2",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
+            "asset": "koreous-bar.jpg",
+            "title": "Korean Root Renewal Bar",
+            "price": "$39.00",
+            "compare": "$50.00",
+            "rating": "",
+            "tags": "Thicker-looking hair, Less breakage, Sulfate free",
+            "badge": "Bestseller",
+            "badge_light": false
+          }
         },
-        "button_H9gpTf": {
-          "type": "button",
-          "name": "t:names.button",
+        "b2": {
+          "type": "product",
           "settings": {
-            "label": "Shop all",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button-custom",
-            "custom_button_background": "rgba(0,0,0,0)",
-            "custom_button_text": "{{ settings.color_palette.background }}",
-            "custom_button_border": "{{ settings.color_palette.background }}",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
+            "asset": "koreous-conditioner.jpg",
+            "title": "Korean Silk Conditioner Bar",
+            "price": "$19.99",
+            "compare": "$40.00",
+            "rating": "",
+            "tags": "Deep hydration, Detangles, Softer hair",
+            "badge": "New",
+            "badge_light": true
+          }
+        },
+        "b3": {
+          "type": "product",
+          "settings": {
+            "asset": "koreous-oil.jpg",
+            "title": "Korean Root Revival Oil",
+            "price": "$16.99",
+            "compare": "$30.00",
+            "rating": "",
+            "tags": "10-in-1 blend, Nourishes roots, Glossy finish",
+            "badge": "",
+            "badge_light": false
+          }
         }
       },
       "block_order": [
-        "text_YLPk4p",
-        "button_H9gpTf"
-      ],
-      "name": "t:names.hero",
-      "settings": {
-        "media_type_1": "image",
-        "media_type_2": "image",
-        "stack_media_on_mobile": false,
-        "custom_mobile_media": false,
-        "media_type_1_mobile": "image",
-        "media_type_2_mobile": "image",
-        "open_in_new_tab": false,
-        "content_direction": "column",
-        "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
-        "vertical_alignment": "flex-end",
-        "align_baseline": true,
-        "horizontal_alignment_flex_direction_column": "center",
-        "vertical_alignment_flex_direction_column": "flex-end",
-        "gap": 24,
-        "section_width": "page-width",
-        "section_height": "medium",
-        "section_height_custom": 50,
-        "background_color": "rgba(0,0,0,0)",
-        "toggle_overlay": true,
-        "overlay_color": "#12121266",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "blurred_reflection": false,
-        "reflection_opacity": 75,
-        "padding-block-start": 100,
-        "padding-block-end": 72
-      }
+        "b1",
+        "b2",
+        "b3"
+      ]
     },
-    "product_list_fa6P9H": {
-      "type": "product-list",
+    "approach": {
+      "type": "koreous-approach",
+      "settings": {}
+    },
+    "ritual": {
+      "type": "koreous-ritual",
+      "settings": {},
       "blocks": {
-        "static-header": {
-          "type": "_product-list-content",
-          "name": "t:names.header",
-          "static": true,
+        "r1": {
+          "type": "item",
           "settings": {
-            "content_direction": "row",
-            "vertical_on_mobile": false,
-            "horizontal_alignment": "space-between",
-            "vertical_alignment": "flex-end",
-            "align_baseline": true,
-            "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_list_text_YFtzcL": {
-              "type": "_product-list-text",
-              "name": "t:names.collection_title",
-              "settings": {
-                "text": "<h3>{{ closest.collection.title }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h4",
-                "font": "var(--font-body--family)",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_list_button_MWeP9V": {
-              "type": "_product-list-button",
-              "name": "t:names.product_list_button",
-              "settings": {
-                "label": "View all",
-                "open_in_new_tab": false,
-                "style_class": "link",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_list_text_YFtzcL",
-            "product_list_button_MWeP9V"
-          ]
+            "asset": "koreous-brush.jpg",
+            "title": "Scalp Massage Brush",
+            "text": "Lifts flakes and gets blood flowing with every wash.",
+            "price": "$9.99",
+            "compare": "$20.00"
+          }
         },
-        "static-product-card": {
-          "type": "_product-card",
-          "name": "t:names.product_card",
-          "static": true,
+        "r2": {
+          "type": "item",
           "settings": {
-            "product_card_gap": 4,
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "product_card_gallery_677WP3": {
-              "type": "_product-card-gallery",
-              "name": "t:names.product_card_media",
-              "settings": {
-                "image_ratio": "adapt",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "product_title_YXxMTj": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "price_JQzVV4": {
-              "type": "price",
-              "name": "t:names.product_price",
-              "settings": {
-                "show_sale_price_first": true,
-                "show_installments": false,
-                "show_tax_info": false,
-                "type_preset": "h6",
-                "width": "100%",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "product_card_gallery_677WP3",
-            "product_title_YXxMTj",
-            "price_JQzVV4"
-          ]
+            "asset": "koreous-dock.jpg",
+            "title": "Bamboo Draining Dock",
+            "text": "Keeps your bar dry between washes so it lasts longer.",
+            "price": "$9.99",
+            "compare": "$20.00"
+          }
         }
       },
-      "name": "t:names.product_list",
+      "block_order": [
+        "r1",
+        "r2"
+      ]
+    },
+    "reviews": {
+      "type": "koreous-reviews",
       "settings": {
-        "collection": "all",
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "max_products": 8,
-        "columns": 4,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "rows_gap": 24,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "horizontal_alignment": "flex-start",
-        "gap": 28,
-        "background_color": "{{ settings.color_palette.background }}",
-        "padding-block-start": 48,
-        "padding-block-end": 48
-      }
+        "heading": "They switched. Here’s what changed.",
+        "summary": ""
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "faq": {
+      "type": "koreous-help-faq",
+      "settings": {},
+      "blocks": {
+        "q0": {
+          "type": "faq",
+          "settings": {
+            "question": "How long before I see results?",
+            "answer": "<p>Most people notice a cleaner, calmer-feeling scalp within the first couple of weeks. Hair changes take longer because hair grows slowly — give your Koreous ritual a consistent 2–3 months of regular use before judging.</p>"
+          }
+        },
+        "q1": {
+          "type": "faq",
+          "settings": {
+            "question": "Why is this different from other hair products I've tried?",
+            "answer": "<p>Most products focus on the hair strand. Koreous is built around the scalp — clearing buildup and keeping the skin balanced with fermented Korean botanicals, in a solid bar with no sulfates.</p>"
+          }
+        },
+        "q2": {
+          "type": "faq",
+          "settings": {
+            "question": "Is it safe for sensitive scalps?",
+            "answer": "<p>Our formulas are made to be gentle for everyday use. If you have a sensitive scalp or a skin condition, patch test first and check the ingredient list, and speak with your doctor if you're unsure.</p>"
+          }
+        },
+        "q3": {
+          "type": "faq",
+          "settings": {
+            "question": "Return Policy",
+            "answer": "<p>Try Koreous for 30 days. If you're not happy, contact us and we'll make it right with a full refund.</p>"
+          }
+        },
+        "q4": {
+          "type": "faq",
+          "settings": {
+            "question": "Shipping",
+            "answer": "<p>Orders are dispatched within 24–48 hours and include tracking so you can follow your parcel to your door.</p>"
+          }
+        },
+        "q5": {
+          "type": "faq",
+          "settings": {
+            "question": "How is the product made?",
+            "answer": "<p>Each bar is made in small batches with Korean-inspired plant extracts, cured slowly and wrapped in minimal, recyclable packaging.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "q0",
+        "q1",
+        "q2",
+        "q3",
+        "q4",
+        "q5"
+      ]
+    },
+    "trust": {
+      "type": "koreous-trust",
+      "blocks": {
+        "t1": {
+          "type": "item",
+          "settings": {
+            "icon": "truck",
+            "title": "Fast, tracked shipping",
+            "text": "Dispatched within 24–48h — tracked all the way to your door."
+          }
+        },
+        "t2": {
+          "type": "item",
+          "settings": {
+            "icon": "badge",
+            "title": "30-day money-back",
+            "text": "Love it or get every cent back within 30 days, no questions asked."
+          }
+        },
+        "t3": {
+          "type": "item",
+          "settings": {
+            "icon": "support",
+            "title": "Real human support",
+            "text": "Message us anytime — a real person replies within a few hours."
+          }
+        }
+      },
+      "block_order": [
+        "t1",
+        "t2",
+        "t3"
+      ],
+      "settings": {}
     }
   },
   "order": [
-    "hero_jVaWmY",
-    "product_list_fa6P9H"
+    "hero",
+    "best",
+    "approach",
+    "ritual",
+    "reviews",
+    "faq",
+    "trust"
   ]
 }

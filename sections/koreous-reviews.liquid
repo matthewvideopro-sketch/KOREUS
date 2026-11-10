@@ -1,0 +1,53 @@
+{%- if section.blocks.size > 0 or request.design_mode -%}
+<section class="k-section">
+  <div class="k-wrap">
+    <div class="k-rev__head">
+      <div>
+        <h2 class="k-h2" style="font-size:34px">{{ section.settings.heading }}</h2>
+        {%- if section.settings.summary != blank -%}
+        <div class="k-rev__summary"><span class="k-stars">{% for i in (1..5) %}{% render 'koreous-icon', icon: 'star' %}{% endfor %}</span>{{ section.settings.summary }}</div>
+        {%- endif -%}
+      </div>
+      <div class="k-rev__arrows">
+        <button type="button" aria-label="Previous" onclick="this.closest('section').querySelector('.k-rev__track').scrollBy({left:-300,behavior:'smooth'})">&larr;</button>
+        <button type="button" aria-label="Next" onclick="this.closest('section').querySelector('.k-rev__track').scrollBy({left:300,behavior:'smooth'})">&rarr;</button>
+      </div>
+    </div>
+    <div class="k-rev__track">
+      {%- for block in section.blocks -%}
+      <article class="k-rev" {{ block.shopify_attributes }}>
+        <div class="k-rev__stars">{% for i in (1..block.settings.stars) %}<span>{% render 'koreous-icon', icon: 'star' %}</span>{% endfor %}</div>
+        <h3>{{ block.settings.title }}</h3>
+        <p>{{ block.settings.body }}</p>
+        <div class="k-rev__by"><b>{{ block.settings.name }}</b>{% if block.settings.verified %}<span class="k-verified">&#10004; Verified buyer</span>{% endif %}
+          <div class="k-rev__prod">{{ block.settings.product_name }}</div></div>
+      </article>
+      {%- else -%}
+      <p style="font-size:13px;color:#888">Add real customer reviews here as blocks (Theme editor &rarr; this section &rarr; Add review). This section stays hidden on the live store until it has at least one.</p>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "KOREOUS reviews",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "They switched. Here’s what changed." },
+    { "type": "text", "id": "summary", "label": "Rating summary (e.g. 4.8/5 · based on 312 reviews) — only use real numbers" }
+  ],
+  "blocks": [{
+    "type": "review", "name": "Review",
+    "settings": [
+      { "type": "range", "id": "stars", "label": "Stars", "min": 1, "max": 5, "step": 1, "default": 5 },
+      { "type": "text", "id": "title", "label": "Title" },
+      { "type": "textarea", "id": "body", "label": "Review" },
+      { "type": "text", "id": "name", "label": "Name (e.g. Matthew, 42)" },
+      { "type": "checkbox", "id": "verified", "label": "Verified buyer", "default": true },
+      { "type": "text", "id": "product_name", "label": "Product", "default": "Korean Root Renewal Bar" }
+    ]
+  }],
+  "presets": [{ "name": "KOREOUS reviews" }]
+}
+{% endschema %}

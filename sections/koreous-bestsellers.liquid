@@ -1,0 +1,65 @@
+<section class="k-section">
+  <div class="k-wrap">
+    <h2 class="k-h2">{{ section.settings.heading }}</h2>
+    <div class="k-best__grid">
+      {%- for block in section.blocks -%}
+        {%- assign p = block.settings.product -%}
+        {%- if p != blank -%}
+          {%- assign url = p.url -%}{%- assign title = p.title -%}
+          {%- capture price -%}{{ p.price | money }}{%- endcapture -%}
+          {%- capture compare -%}{% if p.compare_at_price > p.price %}{{ p.compare_at_price | money }}{% endif %}{%- endcapture -%}
+        {%- else -%}
+          {%- assign url = block.settings.link | default: '/collections/all' -%}{%- assign title = block.settings.title -%}
+          {%- assign price = block.settings.price -%}{%- assign compare = block.settings.compare -%}
+        {%- endif -%}
+        <div class="k-card" {{ block.shopify_attributes }}>
+          <a class="k-card__media" href="{{ url }}">
+            {%- if block.settings.image != blank -%}
+              <img src="{{ block.settings.image | image_url: width: 900 }}" alt="{{ title }}" loading="lazy">
+            {%- elsif p != blank and p.featured_image != blank -%}
+              <img src="{{ p.featured_image | image_url: width: 900 }}" alt="{{ title }}" loading="lazy">
+            {%- else -%}
+              <img src="{{ block.settings.asset | asset_url }}" alt="{{ title }}" loading="lazy">
+            {%- endif -%}
+            {%- if block.settings.badge != blank -%}<span class="k-badge{% if block.settings.badge_light %} k-badge--light{% endif %}">{{ block.settings.badge }}</span>{%- endif -%}
+          </a>
+          {%- if block.settings.rating != blank -%}
+          <div class="k-card__rating"><span class="k-stars">{% for i in (1..5) %}{% render 'koreous-icon', icon: 'star' %}{% endfor %}</span> {{ block.settings.rating }}</div>
+          {%- else -%}<div style="height:14px"></div>{%- endif -%}
+          <a class="k-card__title" href="{{ url }}">{{ title }}</a>
+          <div class="k-price">{% if compare != blank %}<s>{{ compare }}</s>{% endif %}<b>{{ price }}</b></div>
+          <div class="k-tags">
+            {%- assign tags = block.settings.tags | split: ',' -%}
+            {%- for t in tags -%}<span>{{ t | strip }}</span>{%- endfor -%}
+          </div>
+          <a class="k-btn" href="{{ url }}">Shop now</a>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "KOREOUS bestsellers",
+  "settings": [{ "type": "text", "id": "heading", "label": "Heading", "default": "Bestsellers" }],
+  "blocks": [{
+    "type": "product",
+    "name": "Product card",
+    "settings": [
+      { "type": "product", "id": "product", "label": "Product (overrides title/price below)" },
+      { "type": "image_picker", "id": "image", "label": "Card image (optional)" },
+      { "type": "text", "id": "asset", "label": "Built-in image file", "default": "koreous-bar.jpg" },
+      { "type": "text", "id": "title", "label": "Title", "default": "Korean Root Renewal Bar" },
+      { "type": "text", "id": "price", "label": "Price", "default": "$39.00" },
+      { "type": "text", "id": "compare", "label": "Compare-at price", "default": "$50.00" },
+      { "type": "text", "id": "rating", "label": "Rating text (leave blank until you have real reviews)" },
+      { "type": "text", "id": "tags", "label": "Benefit tags (comma separated)", "default": "Thicker-looking hair, Less breakage, Sulfate free" },
+      { "type": "text", "id": "badge", "label": "Badge" },
+      { "type": "checkbox", "id": "badge_light", "label": "Light badge", "default": false },
+      { "type": "url", "id": "link", "label": "Link (if no product)" }
+    ]
+  }],
+  "presets": [{ "name": "KOREOUS bestsellers" }]
+}
+{% endschema %}
